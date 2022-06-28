@@ -1,0 +1,40 @@
+<div class="container">
+<p style="color: green"><%= notice %></p>
+
+<h1>Materiels</h1>
+
+<div id="materiels">
+ <table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Type</th>
+      <th scope="col">OS</th>
+      <th scope="col">Id</th>
+      <th scope="col">Status</th>
+      <th scope="col">Modifier</th>
+      
+
+    </tr>
+  </thead>
+  <tbody>
+  <% @materiels.each do |materiel| %>
+    <tr>
+    <td><a href="materiels/<%= materiel.id %>"><%= materiel.marque %></a></td>
+    <td><%= materiel.os %></td>
+    <td><%= materiel.id %></td>
+     <% if EmpruntMateriel.where(id_mat: materiel.id)[0].nil? %> 
+          <td><%= "Disponible" %></td>
+        <%else%>
+        <td><%= "Indisponible" %></td>
+        <%end%>
+    <td><%= link_to "Show details", materiel %></td>
+    </tr>
+
+  <% end %>
+</div>
+</tbody>
+</table>
+<a href ="materiels.csv"><%="Exporter Materiels"%></a> |
+<%= link_to "New materiel", new_materiel_path %> |
+ <%= link_to "Emprunter", new_emprunt_materiel_path %>
+</div>

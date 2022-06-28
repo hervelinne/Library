@@ -1,0 +1,54 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+#logo{
+    font-size : 2em; 
+    color : black; 
+    text-transform: uppercase;
+    font-weight: bold;
+}
+#logo:hover{
+    color: grey;
+    text-decoration: none;
+}
+
+footer{
+    margin-top : 50px; 
+    /* espace apres le contenu */
+    border-top :  1px solid #eaeaea;
+    padding-top : 5px; /* space after border*/
+    color : #777; 
+}
+h1{
+    margin-top: -5px;
+    padding-bottom: 10px;
+}
+
+footer a:hover{
+    color : #222; 
+}
+
+footer small{
+    float :  left; 
+}
+
+footer ul {
+    float : right; 
+    list-style: none;
+}
+
+footer ul li{
+    float: left; 
+    margin-left : 15px; 
+}
+.container{
+    margin-top: 50px;
+}
+.jumbotron{
+    background-image: url("image01.jpg");
+    background-size: cover; /* mm taille que jumbotron*/
+    height: 300px; 
+    width : 1000px; 
+    margin-left: 50px;
+
+}

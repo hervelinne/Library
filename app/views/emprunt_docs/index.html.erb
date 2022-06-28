@@ -1,0 +1,28 @@
+<div class="container">
+<p style="color: green"><%= notice %></p>
+
+<h1>Emprunt docs</h1>
+
+<div id="emprunt_docs">
+ <table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">ID Adherent</th>
+      <th scope="col">ISBN Document</th>
+      <th scope="col">Supprimer L'emprunt</th>
+
+    </tr>
+  </thead>
+  <tbody>
+  <% @emprunt_docs.each do |emprunt_doc| %>
+   <tr>
+    <td><%= emprunt_doc.id_adh %></td>
+    <td><%= emprunt_doc.isbn_livre %></td>
+    <td><%= button_to "supprimer", emprunt_doc, method: :delete %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+</div>
+<a href="emprunt_docs.csv"><%="Exporter Emprunts"%></a>
+</div>

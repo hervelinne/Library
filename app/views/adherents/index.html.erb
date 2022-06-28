@@ -1,0 +1,32 @@
+<div class="container">
+<p style="color: green"><%= notice %></p>
+
+<h1>Adherents</h1>
+
+<div id="adherents">
+    <table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Nom</th>
+      <th scope="col">Prenom</th>
+      <th scope="col">Id</th>
+      <th scope="col">Lien</th>
+
+    </tr>
+  </thead>
+  <tbody>
+  <% @adherents.each do |adherent| %>
+    <td><a href="adherents/<%= adherent.id %>"><%= adherent.nom %></a></td>
+    <td><%= adherent.prenom %></td>
+    <td><%= adherent.id %></td>
+    <td><%= link_to "Show this adherent", adherent %></td>
+
+    </tr>
+
+  <% end %>
+  </tbody>
+</table>
+</div>
+<a href ="adherents.csv"><%="Exporter Adherents"%></a> |
+<%= link_to "New adherent", new_adherent_path %>
+</div>

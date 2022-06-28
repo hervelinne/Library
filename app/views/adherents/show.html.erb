@@ -1,0 +1,12 @@
+<div class="container">
+<p style="color: green"><%= notice %></p>
+
+<%= render @adherent %>
+
+<div>
+  <%= link_to "Edit this adherent", edit_adherent_path(@adherent) %> |
+  <%= link_to "Back to adherents", adherents_path %>
+
+  <%= button_to "Destroy this adherent", @adherent, method: :delete %>
+</div>
+</div>

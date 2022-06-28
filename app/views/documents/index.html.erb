@@ -1,0 +1,42 @@
+<div class="container">
+<p style="color: green"><%= notice %></p>
+
+<h1>Documents</h1>
+
+<div id="documents">
+    <table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Titre</th>
+      <th scope="col">Type</th>
+      <th scope="col">Auteur</th>
+      <th scope="col">isbn</th>
+      <th scope="col">Statut</th>
+      <th scope="col">Lien</th>
+
+    </tr>
+  </thead>
+  <tbody>
+  <% @documents.each do |document| %>
+   <tr>
+    <td><a href="documents/<%= document.id %>"><%= document.titre %></a></td>
+    <td><%= document.type %></td>
+    <td><%= document.auteur %></td>
+    <td><%= document.isbn %></td>
+ 
+     <% if EmpruntDoc.where(isbn_livre: document.isbn)[0].nil? %> 
+          <td><%= "Disponible" %></td>
+        <%else%>
+        <td><%= "Indisponible" %></td>
+        <%end%>
+    <td><%= link_to "Show this document", document %></td>
+    </tr>
+
+  <% end %>
+</tbody>
+</table>
+</div>
+<a href ="documents.csv"><%="Exporter Documents"%></a> |
+<%= link_to "New document", new_document_path %> |
+<%= link_to "Emprunter document", new_emprunt_doc_path %>
+</div>

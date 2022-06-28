@@ -1,0 +1,30 @@
+<div class="container">
+<p style="color: green"><%= notice %></p>
+<%= form_with(model: emprunt_doc) do |form| %>
+  <% if emprunt_doc.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(emprunt_doc.errors.count, "error") %> prohibited this emprunt_doc from being saved:</h2>
+
+      <ul>
+        <% emprunt_doc.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :isbn_livre, style: "display: block" %>
+    <%= form.number_field :isbn_livre %>
+  </div>
+
+  <div>
+    <%= form.label :id_adh, style: "display: block" %>
+    <%= form.number_field :id_adh %>
+  </div>
+
+  <div style = "margin-top : 10px;">
+    <%= form.submit %>
+  </div>
+<% end %>
+</div>

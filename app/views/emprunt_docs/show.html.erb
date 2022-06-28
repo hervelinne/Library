@@ -1,0 +1,11 @@
+<div class="container">
+<p style="color: green"><%= notice %></p>
+
+<%= render @emprunt_doc %>
+
+<div>
+  <%= link_to "Back to documents", documents_path %>
+
+  <%= button_to "Destroy this emprunt ", @emprunt_doc, method: :delete %>
+</div>
+</div>

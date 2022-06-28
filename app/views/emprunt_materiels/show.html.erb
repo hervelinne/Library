@@ -1,0 +1,12 @@
+
+<div class="container">
+<p style="color: green"><%= notice %></p>
+
+<%= render @emprunt_materiel %>
+
+<div>
+  <%= link_to "Back to materiels", materiels_path %>
+
+  <%= button_to "Destroy this emprunt ", @emprunt_materiel, method: :delete %>
+</div>
+</div>
